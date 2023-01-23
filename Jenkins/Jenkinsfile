@@ -11,13 +11,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat './Jenkins/scripts/test.sh'
+                sh 'Jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') {
             steps {
-                bat './Jenkins/scripts/deliver.sh'
-                bat './Jenkins/scripts/kill.sh'
+                sh 'Jenkins/scripts/deliver.sh'
+                sh 'Jenkins/scripts/kill.sh'
             }
         }
     }
